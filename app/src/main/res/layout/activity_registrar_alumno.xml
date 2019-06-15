@@ -50,7 +50,8 @@
     <!--Segunda Fila-->
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_margin="20dp">
 
         <android.support.design.widget.TextInputEditText
             android:id="@+id/txtNombre"
@@ -63,7 +64,8 @@
     <!--Tercera Fila-->
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_margin="20dp">
 
         <android.support.design.widget.TextInputEditText
             android:id="@+id/txtEdad"
@@ -76,7 +78,8 @@
     <!--Cuarta Fila-->
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_margin="20dp" >
 
         <android.support.design.widget.TextInputEditText
             android:id="@+id/txtEmail"
@@ -91,12 +94,14 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_margin="20dp">
 
         <Button
             android:layout_width="150dp"
             android:layout_height="50dp"
-            android:text="@string/tomar_foto" />
+            android:text="@string/tomar_foto"
+            android:onClick="tomarFoto"/>
 
         <ImageView
             android:id="@+id/imageView"
@@ -111,7 +116,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_margin="20dp">
 
         <Button
             android:id="@+id/guardar"
