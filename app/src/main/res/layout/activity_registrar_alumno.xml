@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegistrarAlumnoActivity">
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginStart="10sp">
+
+        <Button
+            android:id="@+id/botonRegresar"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="20sp"
+            android:background="@android:drawable/ic_notification_clear_all"
+            android:onClick="RegresarHome"
+            android:paddingBottom="10dp"
+            android:src="@android:drawable/btn_dialog" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginEnd="10sp"
+        >
+
+        <Button
+            android:id="@+id/botonVista3"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="300dp"
+            android:layout_marginTop="20sp"
+            android:onClick="irHistorico"
+            android:background="@android:drawable/ic_menu_my_calendar"/>
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerInParent="true"
+        android:gravity="center">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/TexViewNombre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:text="Nombre:" />
+
+
+            <EditText
+                android:id="@+id/editNombre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textViewEdad"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Edad:" />
+
+            <EditText
+                android:id="@+id/editEdad"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textViewEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Email:" />
+
+            <EditText
+                android:id="@+id/editEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:layout_centerInParent="true"
+            android:gravity="center">
+
+
+
+            <Button
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_gravity="left"
+                android:onClick="tomarFoto"
+                android:text="Tomar foto" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="10sp"
+                android:src="@mipmap/ic_launcher" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="70dp">
+
+            <Button
+                android:id="@+id/guardar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:hint="Guardar/Editar"
+                android:text="Guardar/Editar"/>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>
