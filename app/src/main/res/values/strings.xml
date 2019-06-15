@@ -3,7 +3,7 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_mostrar_historicos">MostrarHistoricosActivity</string>
 
-    <string name="titlulo_pickers">Obtener fecha y hora</string>
+    <string name="titlulo_pickers">Medidas de alumno</string>
 
     <string name="formatoDefecha">dd/mm/yyyy</string>
     <string name="formatoDehora">hh:mm</string>
