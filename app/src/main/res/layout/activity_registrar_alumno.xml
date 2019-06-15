@@ -47,20 +47,26 @@
 
     </LinearLayout>
 
+    <!--Titulo-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="Alumno:"
+        android:textSize="24sp" />
+
     <!--Segunda Fila-->
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="60dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginBottom="20dp">
+        android:layout_margin="20dp">
 
         <android.support.design.widget.TextInputEditText
             android:id="@+id/txtNombre"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint="Nombre" />
+            android:hint="Nombre"
+            android:textSize="24sp"/>
 
     </android.support.design.widget.TextInputLayout>
 
@@ -74,7 +80,8 @@
             android:id="@+id/txtEdad"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint="Edad" />
+            android:hint="Edad"
+            android:textSize="24sp"/>
 
     </android.support.design.widget.TextInputLayout>
 
@@ -82,13 +89,14 @@
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="20dp" >
+        android:layout_margin="20dp">
 
         <android.support.design.widget.TextInputEditText
             android:id="@+id/txtEmail"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint="Email" />
+            android:hint="Email"
+            android:textSize="24sp"/>
 
     </android.support.design.widget.TextInputLayout>
 
@@ -96,14 +104,14 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal"
-        android:layout_margin="20dp">
+        android:layout_margin="20dp"
+        android:orientation="horizontal">
 
         <Button
             android:layout_width="150dp"
             android:layout_height="match_parent"
-            android:text="@string/tomar_foto"
-            android:onClick="tomarFoto"/>
+            android:onClick="tomarFoto"
+            android:text="@string/tomar_foto" />
 
         <ImageView
             android:id="@+id/imageView"
@@ -117,16 +125,16 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_margin="20dp"
         android:gravity="center"
-        android:orientation="vertical"
-        android:layout_margin="20dp">
+        android:orientation="vertical">
 
         <Button
-            android:id="@+id/guardar"
+            android:id="@+id/btnGuardar"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_centerInParent="true"
-            android:text="Guardar/Editar" />
+            android:text="Guardar" />
 
     </LinearLayout>
 

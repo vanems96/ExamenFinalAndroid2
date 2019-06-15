@@ -5,14 +5,36 @@ import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 
 public class RegistrarAlumnoActivity extends AppCompatActivity {
     private static final int REQUEST_IMAGE_CAPTURE = 101;
+
+    EditText nombre;
+    EditText edad;
+    EditText email;
+    Button guardar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registrar_alumno);
+
+        nombre = findViewById(R.id.txtNombre);
+        edad = findViewById(R.id.txtEdad);
+        email = findViewById(R.id.txtEmail);
+        guardar = findViewById(R.id.btnGuardar);
+
+        guardar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //TODO: Gardar en la Base de Datos
+
+
+            }
+        });
+
     }
 
     public void RegresarHome(View view){
