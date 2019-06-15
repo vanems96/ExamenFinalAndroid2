@@ -49,19 +49,8 @@ public class PickersActivity extends AppCompatActivity implements View.OnClickLi
 
     }
 
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()){
-            case R.id.ib_obtener_fecha:
-                obtenerFecha();
-                break;
-            case R.id.ib_obtener_hora:
-                obtenerHora();
-                break;
-        }
-    }
 
-    private void obtenerFecha(){
+    public void obtenerFecha() {
         DatePickerDialog recogerFecha = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
@@ -78,8 +67,22 @@ public class PickersActivity extends AppCompatActivity implements View.OnClickLi
         },anio, mes, dia);
 
         recogerFecha.show();
-
     }
+
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.ib_obtener_fecha:
+                obtenerFecha();
+                break;
+            case R.id.ib_obtener_hora:
+                obtenerHora();
+                break;
+        }
+    }
+
+
 
     private void obtenerHora(){
         TimePickerDialog recogerHora = new TimePickerDialog(this, new TimePickerDialog.OnTimeSetListener() {
@@ -103,4 +106,6 @@ public class PickersActivity extends AppCompatActivity implements View.OnClickLi
 
         recogerHora.show();
     }
+
+
 }
