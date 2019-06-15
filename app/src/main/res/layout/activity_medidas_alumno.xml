@@ -13,7 +13,6 @@
             android:layout_height="40dp"
             android:layout_marginTop="20sp"
             android:background="@mipmap/atras"
-            android:onClick="RegresarHistoricos"
             android:paddingBottom="20dp"
             android:src="@mipmap/atras" />
 
