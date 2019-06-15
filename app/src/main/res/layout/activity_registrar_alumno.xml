@@ -22,9 +22,9 @@
                 android:id="@+id/botonRegresar"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:background="@android:drawable/ic_notification_clear_all"
+                android:background="@mipmap/home"
                 android:onClick="RegresarHome"
-                android:src="@android:drawable/btn_dialog" />
+                android:src="@mipmap/home" />
 
         </LinearLayout>
 
@@ -40,7 +40,7 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_gravity="right"
-                android:background="@android:drawable/ic_menu_my_calendar"
+                android:background="@mipmap/mayor"
                 android:onClick="irHistorico" />
 
         </LinearLayout>
