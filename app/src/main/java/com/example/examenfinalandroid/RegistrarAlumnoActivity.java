@@ -13,9 +13,8 @@ public class RegistrarAlumnoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registrar_alumno);
-
-
     }
+
     public void RegresarHome(View view){
         Intent intent = new Intent(RegistrarAlumnoActivity.this, MainActivity.class);
         startActivity(intent);

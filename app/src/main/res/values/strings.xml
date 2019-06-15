@@ -3,9 +3,10 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_mostrar_historicos">MostrarHistoricosActivity</string>
 
-    <string name="titlulo_pickers">Establecer medidas del alumno</string>
+    <string name="titlulo_pickers">Obtener fecha y hora</string>
 
-    <string name="formatoDefecha">dd/mm/yyyy</string>
-    <string name="formatoDehora">hh:mm</string>
+    <string name="formato_fecha">dd/mm/yyyy</string>
+    <string name="formato_hora">hh:mm</string>
+    <string name="tomar_foto">Tomar foto</string>
 
 </resources>
