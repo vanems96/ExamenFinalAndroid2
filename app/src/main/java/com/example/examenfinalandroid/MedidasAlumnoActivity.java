@@ -66,7 +66,7 @@ public class MedidasAlumnoActivity extends AppCompatActivity implements View.OnC
 
                  //TODO: Gardar en la Base de Datos
                  bd.fechaDao().insertAll(
-                         new Fecha(1,1,22,2,2));
+                         new Fecha(567890000,2,3,4,5));
                  startActivity(new Intent(MedidasAlumnoActivity.this, MostrarHistoricosActivity.class));
 
              }
