@@ -1,43 +1,226 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/idFecha"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="id fecha:"/>
+        android:orientation="horizontal">
 
-    <TextView
-        android:id="@+id/Fecha"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Fecha:"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal">
 
-    <TextView
-        android:id="@+id/porcentaje_grasa"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Porcentaje grasa:"/>
+            <TextView
+                android:id="@+id/FechaE"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:text="Fecha:"
+                android:textSize="34sp" />
 
-    <TextView
-        android:id="@+id/porcentaje_masa_muscular"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Masa muscular:"/>
+        </LinearLayout>
 
-    <TextView
-        android:id="@+id/peso_kg"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Pes kg:"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal">
 
-    <TextView
-        android:id="@+id/edad_metabolica"
-        android:layout_width="wrap_content"
+            <TextView
+                android:id="@+id/Fecha"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:textSize="34sp" />
+
+
+        </LinearLayout>
+    </LinearLayout>
+    <!--Termina la primera-->
+
+    <!--Comienza la segunda-->
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Edad metabolica:"/>
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/porcentaje_grasaE"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:text="Porcentaje grasa:" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/porcentaje_grasa"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+    </LinearLayout>
+    <!--Termina el 2-->
+    <!--Comienza el 3-->
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/porcentaje_masa_muscularE"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/porcentaje_masa_muscular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Masa muscular:" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/peso_kgE"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="Pes kg:" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/peso_kg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/idFechaE"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="id fecha:" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <TextView
+            android:id="@+id/idFecha"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!--Termina la 3-->
+    <!--Comienza la 4-->
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/edad_metabolicaE"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:text="Edad metabolica:" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <TextView
+            android:id="@+id/edad_metabolica"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
 
 
 </LinearLayout>
