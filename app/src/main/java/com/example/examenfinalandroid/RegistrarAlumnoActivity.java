@@ -69,7 +69,6 @@ public class RegistrarAlumnoActivity extends AppCompatActivity {
                         edad.getText().toString(),
                         email.getText().toString()));
                 startActivity(new Intent(RegistrarAlumnoActivity.this, MainActivity.class));
-
             }
         });
 
