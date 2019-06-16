@@ -6,8 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
-import java.util.ArrayList;
 import java.util.List;
 
 class AlumnoAdapter extends RecyclerView.Adapter<AlumnoAdapter.ViewHolder> {
@@ -28,6 +26,8 @@ class AlumnoAdapter extends RecyclerView.Adapter<AlumnoAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull AlumnoAdapter.ViewHolder viewHolder, int i) {
         viewHolder.lblNombre.setText(alumnos.get(i).getNombre());
+        viewHolder.lblEdad.setText(alumnos.get(i).getEdad());
+        viewHolder.lblEmail.setText(alumnos.get(i).getEmail());
     }
 
     @Override
@@ -37,10 +37,15 @@ class AlumnoAdapter extends RecyclerView.Adapter<AlumnoAdapter.ViewHolder> {
 
     public class ViewHolder extends RecyclerView.ViewHolder{
         public TextView lblNombre;
+        public TextView lblEdad;
+        public TextView lblEmail;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             lblNombre = itemView.findViewById(R.id.lblNombre);
+            lblEdad = itemView.findViewById(R.id.lblEdad);
+            lblEmail = itemView.findViewById(R.id.lblEmail);
+
         }
     }
 }

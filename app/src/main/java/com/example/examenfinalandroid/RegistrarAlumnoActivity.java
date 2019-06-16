@@ -42,7 +42,9 @@ public class RegistrarAlumnoActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //TODO: Gardar en la Base de Datos
-                bd.alumnoDao().insertAll(new Alumno("Marco Tally",1,"w"));
+                bd.alumnoDao().insertAll(new Alumno(nombre.getText().toString(),
+                        edad.getText().toString(),
+                        email.getText().toString()));
                 startActivity(new Intent(RegistrarAlumnoActivity.this, MainActivity.class));
 
             }

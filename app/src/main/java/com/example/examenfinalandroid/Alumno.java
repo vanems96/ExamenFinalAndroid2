@@ -14,12 +14,12 @@ public class Alumno {
     private String nombre;
 
     @ColumnInfo(name = "edad")
-    private int edad;
+    private String edad;
 
     @ColumnInfo(name = "email")
     private String email;
 
-    public Alumno(String nombre, int edad, String email) {
+    public Alumno(String nombre, String edad, String email) {
         this.nombre = nombre;
         this.edad = edad;
         this.email = email;
@@ -41,11 +41,11 @@ public class Alumno {
         this.nombre = nombre;
     }
 
-    public int getEdad() {
+    public String getEdad() {
         return edad;
     }
 
-    public void setEdad(int edad) {
+    public void setEdad(String edad) {
         this.edad = edad;
     }
 

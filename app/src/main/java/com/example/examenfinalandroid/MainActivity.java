@@ -21,10 +21,6 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView.Adapter adapter;
     FloatingActionButton fab;
 
-
-    /////////////////////////////////////////////////tally///////////////////////////////////////////
-    //ArrayList<Alumno> alumnos;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,22 +28,22 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        /*alumnos = new ArrayList<>();
 
-        for (int i = 0; i < 10; i++) {
-            Alumno alumno = new Alumno("Marco" + i, 24, "marcotally@gmail.com");
-            alumnos.add(alumno);
-        }*/
 
+        //Prepara la Conexion a la DB
         AppDatabase bd = Room.databaseBuilder(getApplicationContext(), AppDatabase.class,"datosAlumnos")
                 .allowMainThreadQueries()
                 .build();
 
+        //Rellena una lista de Alumnos
         List<Alumno> alumnos = bd.alumnoDao().getAllAlumnos();
 
+        //Se hace la ferencia al RecyclerView de Layout activity_main
         recyclerViewAlumnos = findViewById(R.id.recycler_view_alumno);
         recyclerViewAlumnos.setLayoutManager(new LinearLayoutManager(this));
+        //
         adapter = new AlumnoAdapter(alumnos);
+
         recyclerViewAlumnos.setAdapter(adapter);
 
         fab = findViewById(R.id.fab);
