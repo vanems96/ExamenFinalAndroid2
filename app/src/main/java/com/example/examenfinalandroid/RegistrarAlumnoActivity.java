@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 public class RegistrarAlumnoActivity extends AppCompatActivity {
 
@@ -35,18 +36,14 @@ public class RegistrarAlumnoActivity extends AppCompatActivity {
         email = findViewById(R.id.txtEmail);
         guardar = findViewById(R.id.btnGuardar);
 
-
-
         datos = getIntent().getExtras();
-        String nombreSelec = datos.getString("Nombre");
-        String edadSelect = datos.getString("Edad");
-        String emailSelect = datos.getString("Email");
+            String nombreSelec = datos.getString("Nombre");
+            String edadSelect = datos.getString("Edad");
+            String emailSelect = datos.getString("Email");
 
-        nombre.setText(nombreSelec);
-        edad.setText(edadSelect);
-        email.setText(emailSelect);
-
-
+            nombre.setText(nombreSelec);
+            edad.setText(edadSelect);
+            email.setText(emailSelect);
 
         final AppDatabase bd = Room.databaseBuilder(getApplicationContext(), AppDatabase.class,"datosAlumnos")
                 .allowMainThreadQueries()
@@ -92,5 +89,13 @@ public class RegistrarAlumnoActivity extends AppCompatActivity {
             imageView.setImageBitmap(imageBitmap);
         }
     }
+
+    public void limpiarDatos(){
+        nombre.setText("");
+        edad.setText("");
+        email.setText("");
+    }
+
+
 
 }

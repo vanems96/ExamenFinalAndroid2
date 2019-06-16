@@ -50,11 +50,11 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Toast.makeText(getApplicationContext(), "Selección: " +
                         alumnos.get(recyclerViewAlumnos.getChildAdapterPosition(v)).getNombre(), Toast.LENGTH_SHORT).show();
-                Intent intenVista2 = new Intent(MainActivity.this, RegistrarAlumnoActivity.class);
-                intenVista2.putExtra("Nombre", alumnos.get(recyclerViewAlumnos.getChildAdapterPosition(v)).getNombre());
-                intenVista2.putExtra("Edad", alumnos.get(recyclerViewAlumnos.getChildAdapterPosition(v)).getEdad());
-                intenVista2.putExtra("Email", alumnos.get(recyclerViewAlumnos.getChildAdapterPosition(v)).getEmail());
-                startActivity(intenVista2);
+                Intent intent = new Intent(MainActivity.this, RegistrarAlumnoActivity.class);
+                intent.putExtra("Nombre", alumnos.get(recyclerViewAlumnos.getChildAdapterPosition(v)).getNombre());
+                intent.putExtra("Edad", alumnos.get(recyclerViewAlumnos.getChildAdapterPosition(v)).getEdad());
+                intent.putExtra("Email", alumnos.get(recyclerViewAlumnos.getChildAdapterPosition(v)).getEmail());
+                startActivity(intent);
             }
         });
 
@@ -65,9 +65,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //Pasa a la siguiente Activity
-                startActivity(new Intent(MainActivity.this, RegistrarAlumnoActivity.class));
+                Intent intent = new Intent(MainActivity.this, RegistrarAlumnoActivity.class);
+                intent.putExtra("Nombre", "");
+                intent.putExtra("Edad", "");
+                intent.putExtra("Email", "");
+                startActivity(intent);
             }
         });
+
+
     }
 
 }
