@@ -14,6 +14,9 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TimePicker;
+import android.widget.Toast;
+
+import com.google.android.material.snackbar.Snackbar;
 
 import java.util.Calendar;
 
@@ -40,6 +43,12 @@ public class MedidasAlumnoActivity extends AppCompatActivity implements View.OnC
 
     Button btnGuardarM;
 
+   EditText porcentajeGrasa;
+   EditText masaMuscular;
+   EditText pesoEnKg;
+   EditText edadMetbolica;
+   EditText fechaMedidas;
+
      @Override
      protected void onCreate(Bundle savedInstanceState) {
          super.onCreate(savedInstanceState);
@@ -56,8 +65,13 @@ public class MedidasAlumnoActivity extends AppCompatActivity implements View.OnC
 
          btnGuardarM = findViewById(R.id.btnGuardarM);
 
-         final AppDatabase bd = Room.databaseBuilder(getApplicationContext(), AppDatabase.class,"datosFechas")
-                 .allowMainThreadQueries()
+         porcentajeGrasa = findViewById(R.id.textInPorcentajeGrasa);
+         masaMuscular = findViewById(R.id.textInMasaMuscular);
+         pesoEnKg = findViewById(R.id.textInPesoKg);
+         edadMetbolica = findViewById(R.id.textInEdadMetabolica);
+
+
+         final AppDatabase bd = Room.databaseBuilder(getApplicationContext(), AppDatabase.class,"datosFechas").allowMainThreadQueries()
                  .build();
 
          btnGuardarM.setOnClickListener(new View.OnClickListener() {
@@ -65,9 +79,31 @@ public class MedidasAlumnoActivity extends AppCompatActivity implements View.OnC
              public void onClick(View v) {
 
                  //TODO: Gardar en la Base de Datos
-                 bd.fechaDao().insertAll(
-                         new Fecha(567890000,2,3,4,5));
+
+                 try {
+
+                     bd.fechaDao().insertAll(
+                             new Fecha(etFecha.getText().toString(),porcentajeGrasa.getText().toString(),masaMuscular.getText().toString(),
+                                     pesoEnKg.getText().toString(),edadMetbolica.getText().toString()));
+
+                 } catch (Exception i){
+                     Toast.makeText(getApplicationContext(),
+                             "No se puede repetir la fecha!",
+                             Toast.LENGTH_LONG).show();
+
+                 }
+
                  startActivity(new Intent(MedidasAlumnoActivity.this, MostrarHistoricosActivity.class));
+
+
+                 /*bd.fechaDao().insertAll(
+                         new Fecha(Integer.parseInt(etFecha.getText().toString()),
+                                 Integer.parseInt(porcentajeGrasa.getText().toString()),
+                                 Integer.parseInt(masaMuscular.getText().toString()),
+                                 Integer.parseInt(pesoEnKg.getText().toString()),
+                                 Integer.parseInt(edadMetbolica.getText().toString())));
+                 startActivity(new Intent(MedidasAlumnoActivity.this, MostrarHistoricosActivity.class));*/
+
 
              }
          });
@@ -135,4 +171,13 @@ public class MedidasAlumnoActivity extends AppCompatActivity implements View.OnC
         Intent intent = new Intent(MedidasAlumnoActivity.this, MainActivity.class);
         startActivity(intent);
     }
+
+   /* public void limpiarDatosFecha(){
+        etFecha.setText("");
+        porcentajeGrasa.setText("");
+        masaMuscular.setText("");
+        pesoEnKg.setText("");
+        edadMetbolica.setText("");
+
+    }*/
 }
