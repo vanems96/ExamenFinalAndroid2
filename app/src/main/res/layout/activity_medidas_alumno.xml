@@ -9,14 +9,14 @@
 
         <Button
             android:id="@+id/botonRegresar"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_marginTop="20sp"
             android:background="@mipmap/home"
             android:onClick="RegresarHome"
             android:paddingBottom="10dp"
             android:layout_margin="10sp"
-            android:src="@mipmap/atras" />
+            android:src="@mipmap/home" />
 
 <LinearLayout
     android:layout_width="match_parent"
