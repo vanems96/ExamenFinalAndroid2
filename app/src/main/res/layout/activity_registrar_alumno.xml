@@ -23,8 +23,7 @@
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:background="@mipmap/home"
-                android:onClick="RegresarHome"
-                android:src="@mipmap/home" />
+                android:onClick="RegresarHome" />
 
         </LinearLayout>
 
@@ -66,7 +65,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:hint="Nombre"
-            android:textSize="24sp"/>
+            android:textSize="24sp" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -81,7 +80,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:hint="Edad"
-            android:textSize="24sp"/>
+            android:textSize="24sp" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -96,7 +95,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:hint="Email"
-            android:textSize="24sp"/>
+            android:textSize="24sp" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -137,5 +136,12 @@
             android:text="Guardar" />
 
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/txtId"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:textSize="38sp"
+        android:gravity="center"/>
 
 </LinearLayout>

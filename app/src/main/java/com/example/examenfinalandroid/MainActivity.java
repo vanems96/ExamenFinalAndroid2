@@ -49,14 +49,23 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getApplicationContext(), "Selección: " +
-                        alumnos.get(recyclerViewAlumnos.getChildAdapterPosition(v)).getNombre(), Toast.LENGTH_SHORT).show();
+                        alumnos.get(recyclerViewAlumnos.getChildAdapterPosition(v)).getNombre(), Toast.LENGTH_LONG).show();
+
+
                 Intent intent = new Intent(MainActivity.this, RegistrarAlumnoActivity.class);
                 intent.putExtra("Nombre", alumnos.get(recyclerViewAlumnos.getChildAdapterPosition(v)).getNombre());
                 intent.putExtra("Edad", alumnos.get(recyclerViewAlumnos.getChildAdapterPosition(v)).getEdad());
                 intent.putExtra("Email", alumnos.get(recyclerViewAlumnos.getChildAdapterPosition(v)).getEmail());
+                intent.putExtra("Id", alumnos.get(recyclerViewAlumnos.getChildAdapterPosition(v)).getId());
                 intent.putExtra("estado","update");
 
                 startActivity(intent);
+
+                Toast.makeText(getApplicationContext(), "Selección: " +
+                        alumnos.get(recyclerViewAlumnos.getChildAdapterPosition(v)).getId(),
+                        Toast.LENGTH_LONG).show();
+
+
             }
         });
 
@@ -72,6 +81,7 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra("Edad", "");
                 intent.putExtra("Email", "");
                 intent.putExtra("estado","new");
+                intent.putExtra("Id", "");
                 startActivity(intent);
             }
         });

@@ -3,6 +3,7 @@ package com.example.examenfinalandroid;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.provider.MediaStore;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
 
@@ -11,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class RegistrarAlumnoActivity extends AppCompatActivity {
@@ -25,6 +27,8 @@ public class RegistrarAlumnoActivity extends AppCompatActivity {
     Button historico;
     Bundle datos;
 
+    TextView id;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,27 +41,28 @@ public class RegistrarAlumnoActivity extends AppCompatActivity {
         guardar = findViewById(R.id.btnGuardar);
         historico = findViewById(R.id.botonVista3);
 
-
-
+        id = findViewById(R.id.txtId);
 
         datos = getIntent().getExtras();
-            String nombreSelec = datos.getString("Nombre");
-            String edadSelect = datos.getString("Edad");
-            String emailSelect = datos.getString("Email");
-            String estado = datos.getString("estado");
+        String nombreSelec = datos.getString("Nombre");
+        String edadSelect = datos.getString("Edad");
+        String emailSelect = datos.getString("Email");
+        int idSelect = datos.getInt("Id");
+        String estado = datos.getString("estado");
 
-            nombre.setText(nombreSelec);
-            edad.setText(edadSelect);
-            email.setText(emailSelect);
+        nombre.setText(nombreSelec);
+        edad.setText(edadSelect);
+        email.setText(emailSelect);
+        id.setText(idSelect);
 
 
-        if(estado.equals("new")){
+        if (estado.equals("new")) {
             historico.setVisibility(View.INVISIBLE);
             //Toast.makeText(getApplicationContext(), "New: " , Toast.LENGTH_SHORT).show();
 
         }
 
-        final AppDatabase bd = Room.databaseBuilder(getApplicationContext(), AppDatabase.class,"datosAlumnos")
+        final AppDatabase bd = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, "datosAlumnos")
                 .allowMainThreadQueries()
                 .build();
 
@@ -74,12 +79,12 @@ public class RegistrarAlumnoActivity extends AppCompatActivity {
 
     }
 
-    public void RegresarHome(View view){
+    public void RegresarHome(View view) {
         Intent intent = new Intent(RegistrarAlumnoActivity.this, MainActivity.class);
         startActivity(intent);
     }
 
-    public void irHistorico(View view){
+    public void irHistorico(View view) {
         Intent intent = new Intent(RegistrarAlumnoActivity.this, MostrarHistoricosActivity.class);
         startActivity(intent);
     }
@@ -87,26 +92,17 @@ public class RegistrarAlumnoActivity extends AppCompatActivity {
 
     public void tomarFoto(View view) {
         Intent imageTakeIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        if(imageTakeIntent.resolveActivity(getPackageManager()) !=null) {
+        if (imageTakeIntent.resolveActivity(getPackageManager()) != null) {
             startActivityForResult(imageTakeIntent, REQUEST_IMAGE_CAPTURE);
         }
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if(requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
+        if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
             Bundle extras = data.getExtras();
             Bitmap imageBitmap = (Bitmap) extras.get("data");
             imageView.setImageBitmap(imageBitmap);
         }
     }
-
-    public void limpiarDatos(){
-        nombre.setText("");
-        edad.setText("");
-        email.setText("");
-    }
-
-
-
 }
