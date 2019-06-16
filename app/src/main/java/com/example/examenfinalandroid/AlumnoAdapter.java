@@ -11,9 +11,9 @@ import java.util.ArrayList;
 
 class AlumnoAdapter extends RecyclerView.Adapter<AlumnoAdapter.ViewHolder> {
 
-    ArrayList<String> alumnos;
+    ArrayList<Alumno> alumnos;
 
-    public AlumnoAdapter(ArrayList<String> alumnos) {
+    public AlumnoAdapter(ArrayList<Alumno> alumnos) {
         this.alumnos = alumnos;
     }
 
@@ -26,7 +26,7 @@ class AlumnoAdapter extends RecyclerView.Adapter<AlumnoAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull AlumnoAdapter.ViewHolder viewHolder, int i) {
-        viewHolder.lblNombre.setText(alumnos.get(i));
+        viewHolder.lblNombre.setText(alumnos.get(i).getNombre());
     }
 
     @Override
