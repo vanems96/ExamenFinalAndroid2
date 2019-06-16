@@ -28,12 +28,11 @@ public class FechaAdapter extends RecyclerView.Adapter<FechaAdapter.ViewHolder> 
     @Override
     public void onBindViewHolder(@NonNull FechaAdapter.ViewHolder holder, int position) {
 
-        holder.idFecha.setText(fechas.get(position).getNumFecha()+"");
-        holder.fecha.setText(fechas.get(position).getFechaMed()+"");
-        holder.porcentajeDeGrasa.setText(fechas.get(position).getPorcentajeGra()+"");
-        holder.porcentajeMasaMuscular.setText(fechas.get(position).getMasaMuscular()+"");
-        holder.pesoEnKilogramos.setText(fechas.get(position).getPesoKg()+"");
-        holder.edadMetabolica.setText(fechas.get(position).getEdadMeta()+"");
+        holder.fecha.setText(fechas.get(position).getFechaMed());
+        holder.porcentajeDeGrasa.setText(fechas.get(position).getPorcentajeGra());
+        holder.porcentajeMasaMuscular.setText(fechas.get(position).getMasaMuscular());
+        holder.pesoEnKilogramos.setText(fechas.get(position).getPesoKg());
+        holder.edadMetabolica.setText(fechas.get(position).getEdadMeta());
 
 
     }
@@ -44,7 +43,6 @@ public class FechaAdapter extends RecyclerView.Adapter<FechaAdapter.ViewHolder> 
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        public TextView idFecha;
         public TextView fecha;
         public TextView porcentajeDeGrasa;
         public TextView porcentajeMasaMuscular;
@@ -53,7 +51,6 @@ public class FechaAdapter extends RecyclerView.Adapter<FechaAdapter.ViewHolder> 
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            idFecha = itemView.findViewById(R.id.idFecha);
             fecha = itemView.findViewById(R.id.Fecha);
             porcentajeDeGrasa = itemView.findViewById(R.id.porcentaje_grasa);
             porcentajeMasaMuscular = itemView.findViewById(R.id.porcentaje_masa_muscular);

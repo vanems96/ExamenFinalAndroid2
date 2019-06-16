@@ -1,30 +1,30 @@
 package com.example.examenfinalandroid;
 
+import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
 @Entity
 public class Fecha {
-    @PrimaryKey(autoGenerate = true)
-    private int numFecha;
-
+    @PrimaryKey
     @ColumnInfo(name = "fechaMedidas")
-    private int fechaMed;
+    @NonNull
+    private String fechaMed;
 
     @ColumnInfo(name = "porcentajeGrasa")
-    private int porcentajeGra;
+    private String porcentajeGra;
 
     @ColumnInfo(name = "porcentajeMasaMuscular")
-    private int masaMuscular;
+    private String masaMuscular;
 
     @ColumnInfo(name = "pesoEnKg")
-    private int pesoKg;
+    private String pesoKg;
 
     @ColumnInfo(name = "edadMetabolica")
-    private int edadMeta;
+    private String edadMeta;
 
-    public Fecha(int fechaMed, int porcentajeGra, int masaMuscular, int pesoKg, int edadMeta) {
+    public Fecha(String fechaMed, String porcentajeGra, String masaMuscular, String pesoKg, String edadMeta) {
         this.fechaMed = fechaMed;
         this.porcentajeGra = porcentajeGra;
         this.masaMuscular = masaMuscular;
@@ -32,27 +32,43 @@ public class Fecha {
         this.edadMeta = edadMeta;
     }
 
-    public int getFechaMed() { return fechaMed; }
+    public String getFechaMed() {
+        return fechaMed;
+    }
 
-    public void setFechaMed(int fechaMed) { this.fechaMed = fechaMed; }
+    public void setFechaMed(String fechaMed) {
+        this.fechaMed = fechaMed;
+    }
 
-    public int getNumFecha() { return numFecha; }
+    public String getPorcentajeGra() {
+        return porcentajeGra;
+    }
 
-    public void setNumFecha(int numFecha) { this.numFecha = numFecha; }
+    public void setPorcentajeGra(String porcentajeGra) {
+        this.porcentajeGra = porcentajeGra;
+    }
 
-    public int getPorcentajeGra() { return porcentajeGra; }
+    public String getMasaMuscular() {
+        return masaMuscular;
+    }
 
-    public void setPorcentajeGra(int porcentajeGra) { this.porcentajeGra = porcentajeGra; }
+    public void setMasaMuscular(String masaMuscular) {
+        this.masaMuscular = masaMuscular;
+    }
 
-    public int getMasaMuscular() { return masaMuscular; }
+    public String getPesoKg() {
+        return pesoKg;
+    }
 
-    public void setMasaMuscular(int masaMuscular) { this.masaMuscular = masaMuscular; }
+    public void setPesoKg(String pesoKg) {
+        this.pesoKg = pesoKg;
+    }
 
-    public int getPesoKg() { return pesoKg; }
+    public String getEdadMeta() {
+        return edadMeta;
+    }
 
-    public void setPesoKg(int pesoKg) { this.pesoKg = pesoKg; }
-
-    public int getEdadMeta() { return edadMeta; }
-
-    public void setEdadMeta(int edadMeta) { this.edadMeta = edadMeta; }
+    public void setEdadMeta(String edadMeta) {
+        this.edadMeta = edadMeta;
+    }
 }
