@@ -105,4 +105,9 @@ public class MedidasAlumnoActivity extends AppCompatActivity implements View.OnC
 
         recogerHora.show();
     }
+
+    public void RegresarHome(View view){
+        Intent intent = new Intent(MedidasAlumnoActivity.this, MainActivity.class);
+        startActivity(intent);
+    }
 }
