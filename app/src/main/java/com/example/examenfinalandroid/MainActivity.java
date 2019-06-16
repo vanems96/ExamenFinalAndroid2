@@ -1,5 +1,8 @@
 package com.example.examenfinalandroid;
 
+import android.app.DatePickerDialog;
+import android.app.Dialog;
+import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -11,8 +14,14 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.DatePicker;
+import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.TimePicker;
+import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -21,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView.Adapter adapter;
     FloatingActionButton fab;
 
+
+    /////////////////////////////////////////////////tally///////////////////////////////////////////
     ArrayList<String> alumnos;
 
     @Override
@@ -51,4 +62,5 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
 }
