@@ -8,12 +8,13 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 class AlumnoAdapter extends RecyclerView.Adapter<AlumnoAdapter.ViewHolder> {
 
-    ArrayList<Alumno> alumnos;
+    List<Alumno> alumnos;
 
-    public AlumnoAdapter(ArrayList<Alumno> alumnos) {
+    public AlumnoAdapter(List<Alumno> alumnos) {
         this.alumnos = alumnos;
     }
 

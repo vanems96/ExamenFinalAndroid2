@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.provider.MediaStore;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.room.Room;
+
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -32,11 +34,16 @@ public class RegistrarAlumnoActivity extends AppCompatActivity {
         email = findViewById(R.id.txtEmail);
         guardar = findViewById(R.id.btnGuardar);
 
+        final AppDatabase bd = Room.databaseBuilder(getApplicationContext(), AppDatabase.class,"datosAlumnos")
+                .allowMainThreadQueries()
+                .build();
+
         guardar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //TODO: Gardar en la Base de Datos
-
+                bd.alumnoDao().insertAll(new Alumno("Marco Tally",1,"w"));
+                startActivity(new Intent(RegistrarAlumnoActivity.this, MainActivity.class));
 
             }
         });
