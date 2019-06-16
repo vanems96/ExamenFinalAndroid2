@@ -22,6 +22,7 @@ public class RegistrarAlumnoActivity extends AppCompatActivity {
     EditText email;
     Button guardar;
 
+    Bundle datos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +34,19 @@ public class RegistrarAlumnoActivity extends AppCompatActivity {
         edad = findViewById(R.id.txtEdad);
         email = findViewById(R.id.txtEmail);
         guardar = findViewById(R.id.btnGuardar);
+
+
+
+        datos = getIntent().getExtras();
+        String nombreSelec = datos.getString("Nombre");
+        String edadSelect = datos.getString("Edad");
+        String emailSelect = datos.getString("Email");
+
+        nombre.setText(nombreSelec);
+        edad.setText(edadSelect);
+        email.setText(emailSelect);
+
+
 
         final AppDatabase bd = Room.databaseBuilder(getApplicationContext(), AppDatabase.class,"datosAlumnos")
                 .allowMainThreadQueries()

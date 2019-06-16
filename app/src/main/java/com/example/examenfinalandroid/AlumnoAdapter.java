@@ -8,9 +8,12 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import java.util.List;
 
-class AlumnoAdapter extends RecyclerView.Adapter<AlumnoAdapter.ViewHolder> {
+class AlumnoAdapter extends RecyclerView.Adapter<AlumnoAdapter.ViewHolder> implements View.OnClickListener{
 
     List<Alumno> alumnos;
+
+    private View.OnClickListener clickListener;
+    private View.OnLongClickListener longClickListener;
 
     public AlumnoAdapter(List<Alumno> alumnos) {
         this.alumnos = alumnos;
@@ -20,6 +23,10 @@ class AlumnoAdapter extends RecyclerView.Adapter<AlumnoAdapter.ViewHolder> {
     @Override
     public AlumnoAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.alumno_row,viewGroup,false);
+
+        view.setOnClickListener(this);
+
+
         return new ViewHolder(view);
     }
 
@@ -33,6 +40,17 @@ class AlumnoAdapter extends RecyclerView.Adapter<AlumnoAdapter.ViewHolder> {
     @Override
     public int getItemCount() {
         return alumnos.size();
+    }
+
+    public void setClickListener(View.OnClickListener listener){
+        this.clickListener = listener;
+    }
+
+    @Override
+    public void onClick(View v) {
+        if(clickListener!= null){
+            clickListener.onClick(v);
+        }
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
