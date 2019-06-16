@@ -22,7 +22,7 @@ public class RegistrarAlumnoActivity extends AppCompatActivity {
     EditText edad;
     EditText email;
     Button guardar;
-
+    Button historico;
     Bundle datos;
 
     @Override
@@ -35,15 +35,27 @@ public class RegistrarAlumnoActivity extends AppCompatActivity {
         edad = findViewById(R.id.txtEdad);
         email = findViewById(R.id.txtEmail);
         guardar = findViewById(R.id.btnGuardar);
+        historico = findViewById(R.id.botonVista3);
+
+
+
 
         datos = getIntent().getExtras();
             String nombreSelec = datos.getString("Nombre");
             String edadSelect = datos.getString("Edad");
             String emailSelect = datos.getString("Email");
+            String estado = datos.getString("estado");
 
             nombre.setText(nombreSelec);
             edad.setText(edadSelect);
             email.setText(emailSelect);
+
+
+        if(estado.equals("new")){
+            historico.setVisibility(View.INVISIBLE);
+            //Toast.makeText(getApplicationContext(), "New: " , Toast.LENGTH_SHORT).show();
+
+        }
 
         final AppDatabase bd = Room.databaseBuilder(getApplicationContext(), AppDatabase.class,"datosAlumnos")
                 .allowMainThreadQueries()

@@ -4,10 +4,12 @@ import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.room.Room;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -36,6 +38,8 @@ public class MedidasAlumnoActivity extends AppCompatActivity implements View.OnC
     EditText etFecha, etHora;
     ImageButton ibObtenerFecha, ibObtenerHora;
 
+    Button btnGuardarM;
+
      @Override
      protected void onCreate(Bundle savedInstanceState) {
          super.onCreate(savedInstanceState);
@@ -49,6 +53,25 @@ public class MedidasAlumnoActivity extends AppCompatActivity implements View.OnC
 
          ibObtenerFecha.setOnClickListener(this);
          ibObtenerHora.setOnClickListener(this);
+
+         btnGuardarM = findViewById(R.id.btnGuardarM);
+
+         final AppDatabase bd = Room.databaseBuilder(getApplicationContext(), AppDatabase.class,"datosFechas")
+                 .allowMainThreadQueries()
+                 .build();
+
+         btnGuardarM.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View v) {
+
+                 //TODO: Gardar en la Base de Datos
+                 bd.fechaDao().insertAll(
+                         new Fecha(1,1,22,2,2));
+                 startActivity(new Intent(MedidasAlumnoActivity.this, MostrarHistoricosActivity.class));
+
+             }
+         });
+
      }
 
     public void obtenerFecha() {

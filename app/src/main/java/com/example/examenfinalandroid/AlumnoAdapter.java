@@ -35,6 +35,7 @@ class AlumnoAdapter extends RecyclerView.Adapter<AlumnoAdapter.ViewHolder> imple
         viewHolder.lblNombre.setText(alumnos.get(i).getNombre());
         viewHolder.lblEdad.setText(alumnos.get(i).getEdad());
         viewHolder.lblEmail.setText(alumnos.get(i).getEmail());
+        viewHolder.lblId.setText(alumnos.get(i).getId()+"");
     }
 
     @Override
@@ -57,12 +58,16 @@ class AlumnoAdapter extends RecyclerView.Adapter<AlumnoAdapter.ViewHolder> imple
         public TextView lblNombre;
         public TextView lblEdad;
         public TextView lblEmail;
+        public TextView lblId;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             lblNombre = itemView.findViewById(R.id.lblNombre);
             lblEdad = itemView.findViewById(R.id.lblEdad);
             lblEmail = itemView.findViewById(R.id.lblEmail);
+            lblId = itemView.findViewById(R.id.lbId);
+
+
 
         }
     }

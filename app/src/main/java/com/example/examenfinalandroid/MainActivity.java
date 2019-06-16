@@ -54,6 +54,8 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra("Nombre", alumnos.get(recyclerViewAlumnos.getChildAdapterPosition(v)).getNombre());
                 intent.putExtra("Edad", alumnos.get(recyclerViewAlumnos.getChildAdapterPosition(v)).getEdad());
                 intent.putExtra("Email", alumnos.get(recyclerViewAlumnos.getChildAdapterPosition(v)).getEmail());
+                intent.putExtra("estado","update");
+
                 startActivity(intent);
             }
         });
@@ -69,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra("Nombre", "");
                 intent.putExtra("Edad", "");
                 intent.putExtra("Email", "");
+                intent.putExtra("estado","new");
                 startActivity(intent);
             }
         });
