@@ -8,9 +8,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.appcompat.widget.Toolbar;
+import androidx.room.Room;
+
 import android.view.View;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     /////////////////////////////////////////////////tally///////////////////////////////////////////
-    ArrayList<Alumno> alumnos;
+    //ArrayList<Alumno> alumnos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,12 +32,18 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        alumnos = new ArrayList<>();
+        /*alumnos = new ArrayList<>();
 
         for (int i = 0; i < 10; i++) {
             Alumno alumno = new Alumno("Marco" + i, 24, "marcotally@gmail.com");
             alumnos.add(alumno);
-        }
+        }*/
+
+        AppDatabase bd = Room.databaseBuilder(getApplicationContext(), AppDatabase.class,"datosAlumnos")
+                .allowMainThreadQueries()
+                .build();
+
+        List<Alumno> alumnos = bd.alumnoDao().getAllAlumnos();
 
         recyclerViewAlumnos = findViewById(R.id.recycler_view_alumno);
         recyclerViewAlumnos.setLayoutManager(new LinearLayoutManager(this));
