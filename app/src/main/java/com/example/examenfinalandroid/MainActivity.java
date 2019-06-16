@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     /////////////////////////////////////////////////tally///////////////////////////////////////////
-    ArrayList<String> alumnos;
+    ArrayList<Alumno> alumnos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,8 +32,8 @@ public class MainActivity extends AppCompatActivity {
         alumnos = new ArrayList<>();
 
         for (int i = 0; i < 10; i++) {
-
-            alumnos.add("Tally" + i);
+            Alumno alumno = new Alumno("Marco" + i, 24, "marcotally@gmail.com");
+            alumnos.add(alumno);
         }
 
         recyclerViewAlumnos = findViewById(R.id.recycler_view_alumno);
