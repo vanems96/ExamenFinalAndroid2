@@ -86,7 +86,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
-        <android.support.design.widget.TextInputLayout
+        <com.google.android.material.textfield.TextInputLayout
 
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
@@ -102,7 +102,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/et_mostrar_fecha_picker"
                 android:layout_marginLeft="8dp"
                 app:layout_constraintLeft_toLeftOf="parent" />
-        </android.support.design.widget.TextInputLayout>
+        </com.google.android.material.textfield.TextInputLayout>
 
 
 
@@ -131,18 +131,18 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <android.support.design.widget.TextInputLayout
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <android.support.design.widget.TextInputEditText
+            <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/textInPorcentajeGrasa"
                 android:hint="Porcentaje grasa:"
                 android:inputType="number"/>
 
-        </android.support.design.widget.TextInputLayout>
+        </com.google.android.material.textfield.TextInputLayout>
 
 
     </LinearLayout>
@@ -153,18 +153,18 @@
         android:orientation="vertical"
         android:layout_marginTop="20sp">
 
-        <android.support.design.widget.TextInputLayout
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <android.support.design.widget.TextInputEditText
+            <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/textInMasaMuscular"
                 android:inputType="number"
                 android:hint="Masa Muscular:"/>
 
-        </android.support.design.widget.TextInputLayout>
+        </com.google.android.material.textfield.TextInputLayout>
 
 
     </LinearLayout>
@@ -176,18 +176,18 @@
         android:orientation="vertical"
         android:layout_marginTop="20sp">
 
-        <android.support.design.widget.TextInputLayout
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <android.support.design.widget.TextInputEditText
+            <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/textInPesoKg"
                 android:hint="Peso en kilogramos:"
                 android:inputType="number"/>
 
-        </android.support.design.widget.TextInputLayout>
+        </com.google.android.material.textfield.TextInputLayout>
 
 
     </LinearLayout>
@@ -198,18 +198,18 @@
         android:orientation="vertical"
         android:layout_marginTop="20sp">
 
-        <android.support.design.widget.TextInputLayout
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <android.support.design.widget.TextInputEditText
+            <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/textInEdadMetabolica"
                 android:hint="Edad metabolica:"
                 android:inputType="number"/>
 
-        </android.support.design.widget.TextInputLayout>
+        </com.google.android.material.textfield.TextInputLayout>
 
 
     </LinearLayout>

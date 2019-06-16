@@ -56,49 +56,49 @@
         android:textSize="24sp" />
 
     <!--Segunda Fila-->
-    <android.support.design.widget.TextInputLayout
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="20dp">
 
-        <android.support.design.widget.TextInputEditText
+        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/txtNombre"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:hint="Nombre"
             android:textSize="24sp"/>
 
-    </android.support.design.widget.TextInputLayout>
+    </com.google.android.material.textfield.TextInputLayout>
 
     <!--Tercera Fila-->
-    <android.support.design.widget.TextInputLayout
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="20dp">
 
-        <android.support.design.widget.TextInputEditText
+        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/txtEdad"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:hint="Edad"
             android:textSize="24sp"/>
 
-    </android.support.design.widget.TextInputLayout>
+    </com.google.android.material.textfield.TextInputLayout>
 
     <!--Cuarta Fila-->
-    <android.support.design.widget.TextInputLayout
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="20dp">
 
-        <android.support.design.widget.TextInputEditText
+        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/txtEmail"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:hint="Email"
             android:textSize="24sp"/>
 
-    </android.support.design.widget.TextInputLayout>
+    </com.google.android.material.textfield.TextInputLayout>
 
     <!--Quinta Fila-->
     <LinearLayout
