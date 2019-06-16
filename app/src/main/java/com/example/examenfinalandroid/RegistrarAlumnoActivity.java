@@ -47,7 +47,7 @@ public class RegistrarAlumnoActivity extends AppCompatActivity {
         String nombreSelec = datos.getString("Nombre");
         String edadSelect = datos.getString("Edad");
         String emailSelect = datos.getString("Email");
-        int idSelect = datos.getInt("Id");
+        String idSelect = datos.getString("Id");
         String estado = datos.getString("estado");
 
         nombre.setText(nombreSelec);
