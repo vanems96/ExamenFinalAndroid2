@@ -1,15 +1,18 @@
 package com.example.examenfinalandroid;
 
 import android.app.DatePickerDialog;
-import android.app.TimePickerDialog;
 
-import androidx.appcompat.app.AppCompatActivity;
+
+import android.app.TimePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TimePicker;
+
 
 import java.util.Calendar;
 
@@ -28,7 +31,7 @@ public class MedidasAlumnoActivity extends AppCompatActivity implements View.OnC
 
     //Hora
     final int hora = c.get(Calendar.HOUR_OF_DAY);
-    final int minuto = c.get(Calendar.MINUTE);
+   final int minuto = c.get(Calendar.MINUTE);
 
     //Widgets
     EditText etFecha, etHora;
@@ -40,10 +43,10 @@ public class MedidasAlumnoActivity extends AppCompatActivity implements View.OnC
          setContentView(R.layout.activity_medidas_alumno);
 
          etFecha = (EditText) findViewById(R.id.et_mostrar_fecha_picker);
-         etHora = (EditText) findViewById(R.id.et_mostrar_hora_picker);
+        etHora = (EditText) findViewById(R.id.et_mostrar_hora_picker);
 
          ibObtenerFecha = (ImageButton) findViewById(R.id.ib_obtener_fecha);
-         ibObtenerHora = (ImageButton) findViewById(R.id.ib_obtener_hora);
+        ibObtenerHora = (ImageButton) findViewById(R.id.ib_obtener_hora);
 
          ibObtenerFecha.setOnClickListener(this);
          ibObtenerHora.setOnClickListener(this);
@@ -75,9 +78,9 @@ public class MedidasAlumnoActivity extends AppCompatActivity implements View.OnC
             case R.id.ib_obtener_fecha:
                 obtenerFecha();
                 break;
-            case R.id.ib_obtener_hora:
-                obtenerHora();
-                break;
+           case R.id.ib_obtener_hora:
+              obtenerHora();
+            break;
         }
     }
 
