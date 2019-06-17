@@ -30,6 +30,14 @@
         android:layout_margin="@dimen/fab_margin"
         app:srcCompat="@android:drawable/ic_input_add" />
 
-
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|left"
+        android:layout_margin="@dimen/fab_margin"
+        android:background="@color/design_default_color_primary"
+        android:src="@mipmap/home"
+        app:backgroundTint="#2196F3" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

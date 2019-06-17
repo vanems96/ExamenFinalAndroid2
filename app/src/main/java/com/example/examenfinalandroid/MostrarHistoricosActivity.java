@@ -20,6 +20,7 @@ public class MostrarHistoricosActivity extends AppCompatActivity {
     RecyclerView recyclerViewFechas;
     RecyclerView.Adapter adapter;
     FloatingActionButton fab;
+    FloatingActionButton fab2;
 
     //TextView lblIdAlumno;
 
@@ -62,6 +63,17 @@ public class MostrarHistoricosActivity extends AppCompatActivity {
 
                 Intent intent = new Intent(MostrarHistoricosActivity.this, MedidasAlumnoActivity.class);
                 intent.putExtra("idAlumno",idSelect);
+                startActivity(intent);
+            }
+        });
+
+
+        fab2 = findViewById(R.id.fab2);
+        fab2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(MostrarHistoricosActivity.this, MainActivity.class);
                 startActivity(intent);
             }
         });
