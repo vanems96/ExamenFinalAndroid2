@@ -16,7 +16,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:orientation="vertical"
-            android:padding="10dp">
+            android:padding="5dp">
 
             <Button
                 android:id="@+id/botonRegresar"
@@ -39,8 +39,8 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_gravity="right"
-                android:background="@mipmap/mayor"
-                android:onClick="irHistorico" />
+                android:onClick="irViewFecha"
+                android:background="@mipmap/mayor"/>
 
         </LinearLayout>
 
@@ -50,7 +50,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
+        android:layout_margin="10dp"
         android:text="Alumno:"
         android:textSize="24sp" />
 
@@ -58,7 +58,7 @@
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="20dp">
+        android:layout_margin="10dp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/txtId"
@@ -69,11 +69,11 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <!--Segunda Fila-->
+    <!--Tercera Fila-->
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="20dp">
+        android:layout_margin="10dp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/txtNombre"
@@ -84,11 +84,11 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <!--Tercera Fila-->
+    <!--Cuarta Fila-->
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="20dp">
+        android:layout_margin="10dp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/txtEdad"
@@ -99,11 +99,11 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <!--Cuarta Fila-->
+    <!--Quinta Fila-->
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="20dp">
+        android:layout_margin="10dp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/txtEmail"
@@ -114,11 +114,11 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <!--Quinta Fila-->
+    <!--Sexta Fila-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="20dp"
+        android:layout_margin="10dp"
         android:orientation="horizontal">
 
         <Button
@@ -135,11 +135,11 @@
             android:src="@mipmap/ic_launcher" />
     </LinearLayout>
 
-    <!--Sexta Fila-->
+    <!--Septima Fila-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="20dp"
+        android:layout_margin="10dp"
         android:gravity="center"
         android:orientation="vertical">
 

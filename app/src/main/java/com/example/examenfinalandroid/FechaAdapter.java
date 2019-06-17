@@ -33,6 +33,7 @@ public class FechaAdapter extends RecyclerView.Adapter<FechaAdapter.ViewHolder> 
         holder.porcentajeMasaMuscular.setText(fechas.get(position).getMasaMuscular());
         holder.pesoEnKilogramos.setText(fechas.get(position).getPesoKg());
         holder.edadMetabolica.setText(fechas.get(position).getEdadMeta());
+        holder.idAlumno.setText(fechas.get(position).getIdAlum());
 
 
     }
@@ -48,6 +49,7 @@ public class FechaAdapter extends RecyclerView.Adapter<FechaAdapter.ViewHolder> 
         public TextView porcentajeMasaMuscular;
         public TextView pesoEnKilogramos;
         public TextView edadMetabolica;
+        public TextView idAlumno;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -56,6 +58,7 @@ public class FechaAdapter extends RecyclerView.Adapter<FechaAdapter.ViewHolder> 
             porcentajeMasaMuscular = itemView.findViewById(R.id.porcentaje_masa_muscular);
             pesoEnKilogramos = itemView.findViewById(R.id.peso_kg);
             edadMetabolica = itemView.findViewById(R.id.edad_metabolica);
+            idAlumno = itemView.findViewById(R.id.idAlumno);
         }
     }
 }
