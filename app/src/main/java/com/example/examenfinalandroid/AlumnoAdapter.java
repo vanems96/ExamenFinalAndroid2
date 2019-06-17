@@ -22,7 +22,8 @@ class AlumnoAdapter extends RecyclerView.Adapter<AlumnoAdapter.ViewHolder> imple
     @NonNull
     @Override
     public AlumnoAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.alumno_row,viewGroup,false);
+        View view = LayoutInflater.from(viewGroup.getContext()).
+                inflate(R.layout.alumno_row,viewGroup,false);
 
         view.setOnClickListener(this);
 
@@ -35,7 +36,7 @@ class AlumnoAdapter extends RecyclerView.Adapter<AlumnoAdapter.ViewHolder> imple
         viewHolder.lblNombre.setText(alumnos.get(i).getNombre());
         viewHolder.lblEdad.setText(alumnos.get(i).getEdad());
         viewHolder.lblEmail.setText(alumnos.get(i).getEmail());
-        viewHolder.lblId.setText(alumnos.get(i).getId()+"");
+        viewHolder.lblId.setText(alumnos.get(i).getId());
     }
 
     @Override
@@ -65,9 +66,7 @@ class AlumnoAdapter extends RecyclerView.Adapter<AlumnoAdapter.ViewHolder> imple
             lblNombre = itemView.findViewById(R.id.lblNombre);
             lblEdad = itemView.findViewById(R.id.lblEdad);
             lblEmail = itemView.findViewById(R.id.lblEmail);
-            lblId = itemView.findViewById(R.id.lbId);
-
-
+            lblId = itemView.findViewById(R.id.lblId);
 
         }
     }

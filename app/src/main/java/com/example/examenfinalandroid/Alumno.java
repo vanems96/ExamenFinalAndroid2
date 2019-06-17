@@ -1,5 +1,6 @@
 package com.example.examenfinalandroid;
 
+import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
@@ -7,8 +8,10 @@ import androidx.room.PrimaryKey;
 @Entity
 public class Alumno {
 
-    @PrimaryKey(autoGenerate = true)
-    private int id;
+    @PrimaryKey
+    @ColumnInfo(name = "id")
+    @NonNull
+    private String id;
 
     @ColumnInfo(name = "nombre")
     private String nombre;
@@ -19,17 +22,19 @@ public class Alumno {
     @ColumnInfo(name = "email")
     private String email;
 
-    public Alumno(String nombre, String edad, String email) {
+    public Alumno(@NonNull String id, String nombre, String edad, String email) {
+        this.id = id;
         this.nombre = nombre;
         this.edad = edad;
         this.email = email;
     }
 
-    public int getId() {
+    @NonNull
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(@NonNull String id) {
         this.id = id;
     }
 
