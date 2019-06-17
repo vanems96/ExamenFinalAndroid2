@@ -61,6 +61,21 @@
         android:layout_margin="20dp">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txtId"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="Id:"
+            android:textSize="24sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!--Segunda Fila-->
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="20dp">
+
+        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/txtNombre"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -136,12 +151,4 @@
             android:text="Guardar" />
 
     </LinearLayout>
-
-    <TextView
-        android:id="@+id/txtId"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:textSize="38sp"
-        android:gravity="center"/>
-
 </LinearLayout>

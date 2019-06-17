@@ -23,11 +23,20 @@ public class RegistrarAlumnoActivity extends AppCompatActivity {
     EditText nombre;
     EditText edad;
     EditText email;
+    EditText id;
+
     Button guardar;
     Button historico;
+
     Bundle datos;
 
-    TextView id;
+    String nombreSelec;
+    String edadSelect;
+    String emailSelect;
+    String idSelect;
+    String estado;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,29 +47,42 @@ public class RegistrarAlumnoActivity extends AppCompatActivity {
         nombre = findViewById(R.id.txtNombre);
         edad = findViewById(R.id.txtEdad);
         email = findViewById(R.id.txtEmail);
+        id = findViewById(R.id.txtId);
+
         guardar = findViewById(R.id.btnGuardar);
         historico = findViewById(R.id.botonVista3);
 
-        id = findViewById(R.id.txtId);
+
 
         datos = getIntent().getExtras();
-        String nombreSelec = datos.getString("Nombre");
-        String edadSelect = datos.getString("Edad");
-        String emailSelect = datos.getString("Email");
-        String idSelect = datos.getString("Id");
-        String estado = datos.getString("estado");
+        nombreSelec = datos.getString("Nombre");
+        edadSelect = datos.getString("Edad");
+        emailSelect = datos.getString("Email");
+        idSelect = datos.getString("Id");
+        estado = datos.getString("estado");
 
         nombre.setText(nombreSelec);
         edad.setText(edadSelect);
         email.setText(emailSelect);
         id.setText(idSelect);
+        id.setEnabled(false);
 
 
         if (estado.equals("new")) {
             historico.setVisibility(View.INVISIBLE);
+            id.setEnabled(true);
             //Toast.makeText(getApplicationContext(), "New: " , Toast.LENGTH_SHORT).show();
 
         }
+
+        historico.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(RegistrarAlumnoActivity.this, MostrarHistoricosActivity.class);
+                intent.putExtra("idAlumno",idSelect);
+                startActivity(intent);
+            }
+        });
 
         final AppDatabase bd = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, "datosAlumnos")
                 .allowMainThreadQueries()
@@ -70,7 +92,9 @@ public class RegistrarAlumnoActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //TODO: Gardar en la Base de Datos
-                bd.alumnoDao().insertAll(new Alumno(nombre.getText().toString(),
+                bd.alumnoDao().insertAll(new Alumno(
+                        id.getText().toString(),
+                        nombre.getText().toString(),
                         edad.getText().toString(),
                         email.getText().toString()));
                 startActivity(new Intent(RegistrarAlumnoActivity.this, MainActivity.class));
@@ -81,11 +105,6 @@ public class RegistrarAlumnoActivity extends AppCompatActivity {
 
     public void RegresarHome(View view) {
         Intent intent = new Intent(RegistrarAlumnoActivity.this, MainActivity.class);
-        startActivity(intent);
-    }
-
-    public void irHistorico(View view) {
-        Intent intent = new Intent(RegistrarAlumnoActivity.this, MostrarHistoricosActivity.class);
         startActivity(intent);
     }
 
