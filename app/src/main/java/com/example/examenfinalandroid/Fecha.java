@@ -24,13 +24,21 @@ public class Fecha {
     @ColumnInfo(name = "edadMetabolica")
     private String edadMeta;
 
-    public Fecha(String fechaMed, String porcentajeGra, String masaMuscular, String pesoKg, String edadMeta) {
+    @ColumnInfo(name = "idAlumno")
+    private String idAlum;
+
+    public Fecha(@NonNull String fechaMed, String porcentajeGra, String masaMuscular, String pesoKg, String edadMeta, String idAlum) {
         this.fechaMed = fechaMed;
         this.porcentajeGra = porcentajeGra;
         this.masaMuscular = masaMuscular;
         this.pesoKg = pesoKg;
         this.edadMeta = edadMeta;
+        this.idAlum = idAlum;
     }
+
+    public String getIdAlum() {return idAlum; }
+
+    public void setIdAlum(String idAlum) {this.idAlum = idAlum;}
 
     public String getFechaMed() {
         return fechaMed;

@@ -16,8 +16,6 @@ import android.widget.ImageButton;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
-import com.google.android.material.snackbar.Snackbar;
-
 import java.util.Calendar;
 
 public class MedidasAlumnoActivity extends AppCompatActivity implements View.OnClickListener{
@@ -49,6 +47,12 @@ public class MedidasAlumnoActivity extends AppCompatActivity implements View.OnC
    EditText edadMetbolica;
    EditText fechaMedidas;
 
+    Bundle datos;
+
+    String idSelect;
+
+
+
      @Override
      protected void onCreate(Bundle savedInstanceState) {
          super.onCreate(savedInstanceState);
@@ -70,8 +74,13 @@ public class MedidasAlumnoActivity extends AppCompatActivity implements View.OnC
          pesoEnKg = findViewById(R.id.textInPesoKg);
          edadMetbolica = findViewById(R.id.textInEdadMetabolica);
 
+         datos = getIntent().getExtras();
 
-         final AppDatabase bd = Room.databaseBuilder(getApplicationContext(), AppDatabase.class,"datosFechas").allowMainThreadQueries()
+         idSelect = datos.getString("idAlumno");
+
+
+         final AppDatabase bd = Room.databaseBuilder(getApplicationContext(),
+                 AppDatabase.class,"datosFechas").allowMainThreadQueries()
                  .build();
 
          btnGuardarM.setOnClickListener(new View.OnClickListener() {
@@ -83,8 +92,11 @@ public class MedidasAlumnoActivity extends AppCompatActivity implements View.OnC
                  try {
 
                      bd.fechaDao().insertAll(
-                             new Fecha(etFecha.getText().toString(),porcentajeGrasa.getText().toString(),masaMuscular.getText().toString(),
-                                     pesoEnKg.getText().toString(),edadMetbolica.getText().toString()));
+                             new Fecha(etFecha.getText().toString(),
+                                     porcentajeGrasa.getText().toString(),
+                                     masaMuscular.getText().toString(),
+                                     pesoEnKg.getText().toString(),
+                                     edadMetbolica.getText().toString(),idSelect));
 
                  } catch (Exception i){
                      Toast.makeText(getApplicationContext(),
@@ -93,7 +105,8 @@ public class MedidasAlumnoActivity extends AppCompatActivity implements View.OnC
 
                  }
 
-                 startActivity(new Intent(MedidasAlumnoActivity.this, MostrarHistoricosActivity.class));
+                 startActivity(new Intent(
+                         MedidasAlumnoActivity.this, MostrarHistoricosActivity.class));
 
 
                  /*bd.fechaDao().insertAll(

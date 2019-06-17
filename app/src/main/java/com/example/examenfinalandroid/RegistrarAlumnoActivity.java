@@ -23,11 +23,18 @@ public class RegistrarAlumnoActivity extends AppCompatActivity {
     EditText nombre;
     EditText edad;
     EditText email;
+    EditText id;
+
     Button guardar;
     Button historico;
+
     Bundle datos;
 
-    TextView id;
+    String idSelect;
+    String nombreSelec;
+    String edadSelect;
+    String emailSelect;
+    String estado;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,28 +45,30 @@ public class RegistrarAlumnoActivity extends AppCompatActivity {
         nombre = findViewById(R.id.txtNombre);
         edad = findViewById(R.id.txtEdad);
         email = findViewById(R.id.txtEmail);
+        id = findViewById(R.id.txtId);
+
         guardar = findViewById(R.id.btnGuardar);
         historico = findViewById(R.id.botonVista3);
 
-        id = findViewById(R.id.txtId);
-
         datos = getIntent().getExtras();
-        String nombreSelec = datos.getString("Nombre");
-        String edadSelect = datos.getString("Edad");
-        String emailSelect = datos.getString("Email");
-        String idSelect = datos.getString("Id");
-        String estado = datos.getString("estado");
 
+        idSelect = datos.getString("Id");
+        nombreSelec = datos.getString("Nombre");
+        edadSelect = datos.getString("Edad");
+        emailSelect = datos.getString("Email");
+        estado = datos.getString("estado");
+
+        id.setText(idSelect);
         nombre.setText(nombreSelec);
         edad.setText(edadSelect);
         email.setText(emailSelect);
-        id.setText(idSelect);
+
+        id.setEnabled(false);
 
 
         if (estado.equals("new")) {
             historico.setVisibility(View.INVISIBLE);
-            //Toast.makeText(getApplicationContext(), "New: " , Toast.LENGTH_SHORT).show();
-
+            id.setEnabled(true);
         }
 
         final AppDatabase bd = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, "datosAlumnos")
@@ -85,10 +94,18 @@ public class RegistrarAlumnoActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void irHistorico(View view) {
-        Intent intent = new Intent(RegistrarAlumnoActivity.this, MostrarHistoricosActivity.class);
+
+    public void irViewFecha(View view) {
+        Intent intent = new Intent(RegistrarAlumnoActivity.this,
+                MostrarHistoricosActivity.class);
+        intent.putExtra("idAlumno",idSelect);
         startActivity(intent);
+
+        Toast.makeText(getApplicationContext(),
+                "Id de Alumno: " + idSelect,
+                Toast.LENGTH_LONG).show();
     }
+
 
 
     public void tomarFoto(View view) {
