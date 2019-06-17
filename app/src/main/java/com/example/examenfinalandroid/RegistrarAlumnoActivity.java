@@ -85,7 +85,7 @@ public class RegistrarAlumnoActivity extends AppCompatActivity {
     }
 
     public void irHistorico(View view) {
-        Intent intent = new Intent(RegistrarAlumnoActivity.this, MostrarHistoricosActivity.class);
+        Intent intent = new Intent(RegistrarAlumnoActivity.this, Main2Activity.class);
         startActivity(intent);
     }
 

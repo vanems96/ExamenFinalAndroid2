@@ -10,7 +10,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MedidasAlumnoActivity"></activity>
+        <activity android:name=".Main2Activity"></activity>
+        <activity android:name=".MedidasAlumnoActivity" />
         <activity
             android:name=".MostrarHistoricosActivity"
             android:label="@string/title_activity_mostrar_historicos"
